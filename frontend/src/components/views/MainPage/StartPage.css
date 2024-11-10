@@ -1,0 +1,58 @@
+.main-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f5fa;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.start-button {
+  display: inline-block;
+  background-color: #4d90fe;
+  padding: 30px 60px; /* 버튼 크기 증가 */
+  font-size: 28px; /* 폰트 크기 증가 */
+  font-weight: medium;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
+  position: relative;
+  margin-top: 20px;
+}
+
+.start-button-text {
+  font-size: 32px; /* 버튼 텍스트 크기 증가 */
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .start-button {
+    padding: 20px 40px; /* 작은 화면에서의 버튼 크기 */
+    font-size: 24px;
+  }
+
+  .start-button-text {
+    font-size: 28px; /* 작은 화면에서의 텍스트 크기 */
+  }
+}
+
+@media (max-width: 480px) {
+  .start-button {
+    padding: 15px 30px; /* 더 작은 화면에서의 버튼 크기 */
+    font-size: 20px;
+  }
+
+  .start-button-text {
+    font-size: 24px; /* 더 작은 화면에서의 텍스트 크기 */
+  }
+}

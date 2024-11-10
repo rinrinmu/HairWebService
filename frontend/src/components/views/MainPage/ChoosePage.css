@@ -1,0 +1,106 @@
+.main-container {
+  width: 100vw; /* 화면 너비에 맞춤 */
+  height: 100vh; /* 화면 높이에 맞춤 */
+  position: relative;
+  background-color: #f5f5fa;
+}
+
+.welcome-message {
+  width: 40%; /* 화면 너비에 비례한 크기 */
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%); /* 가운데 정렬 */
+  font-size: 3vw; /* 화면 너비에 비례한 폰트 크기 */
+  font-weight: bold;
+  text-align: center;
+  color: #33333b;
+}
+
+.buttons-container {
+  position: absolute;
+  top: 50%; /* 화면 중간에 위치 */
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  left: 15%;
+  flex-direction: column;
+  align-items: center; /* 버튼과 텍스트를 가운데 정렬 */
+}
+
+.button {
+  width: 25%; /* 버튼 너비 줄임 */
+  padding: 15px 0; /* 상하 패딩 줄임 */
+  border-radius: 10px;
+  background-color: #4d90fe;
+  color: white;
+  font-size: 1.5vw; /* 폰트 크기 줄임 */
+  font-weight: 500;
+  margin-bottom: 8px; /* 버튼 아래 여백 */
+  text-align: center;
+  cursor: pointer;
+}
+
+.footer-text {
+  color: #47474f;
+  font-size: 1.2vw; /* 텍스트 크기 줄임 */
+  margin-top: -5px; /* 버튼과 텍스트 사이 간격 조정 */
+  text-align: center;
+}
+
+.navbar {
+  width: 100vw; /* 화면 너비에 맞춤 */
+  height: 60px;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(50, 50, 50, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+}
+
+.signup-button {
+  background-color: #4d90fe;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-tools {
+  cursor: pointer;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .welcome-message {
+    font-size: 5vw; /* 작은 화면에서 폰트 크기 조정 */
+  }
+  
+  .button {
+    width: 40%; /* 버튼의 너비 조정 */
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-message {
+    font-size: 6vw; /* 더 작은 화면에서 폰트 크기 조정 */
+  }
+  
+  .button {
+    width: 50%; /* 더 작은 화면에서 버튼 크기 조정 */
+    font-size: 4vw;
+  }
+}

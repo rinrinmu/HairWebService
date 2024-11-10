@@ -1,0 +1,203 @@
+/* 공통 스타일 */
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f5fa;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 80px; /* 전체적인 content 위치를 조금 더 상단으로 조정 */
+  text-align: center;
+}
+
+.header-text {
+  font-size: 42px;
+  font-weight: bold;
+  color: #33333b;
+}
+
+.description {
+  font-size: 22px;
+  color: #47474f;
+  margin-top: 10px;
+}
+
+/* 사용자 이름 입력 스타일 */
+.username-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.username-input label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #161616;
+  margin-bottom: 8px;
+}
+
+.name-input {
+  width: 280px;
+  height: 45px;
+  border: 2px solid #cccccc;
+  border-radius: 10px;
+  padding: 0 15px;
+  font-size: 16px;
+  color: #161616;
+  background-color: #ffffff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.name-input:focus {
+  outline: none;
+  border-color: #4d90fe;
+  box-shadow: 0px 0px 5px rgba(0, 120, 255, 0.5);
+  background-color: #f0f8ff;
+}
+
+/* 업로드 섹션 스타일 */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.upload-button {
+  display: inline-block;
+  background-color: #4d90fe;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: medium;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
+  position: relative;
+}
+
+.upload-button input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* 드롭존 스타일 */
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 150px;
+  border: 2px dashed #4d90fe;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  cursor: pointer;
+  background-color: #f5f5fa;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.dropzone:hover {
+  border-color: #2196f3;
+}
+
+.dropzone.active {
+  border-color: #2196f3;
+  background-color: #e1f5fe;
+}
+
+/* 네비게이션 바 스타일 */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  box-shadow: 0px 3px 6px rgba(50, 50, 50, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-item {
+  margin-right: 20px;
+  font-size: 14px;
+  color: #161616;
+  text-transform: uppercase;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-login {
+  font-size: 14px;
+  margin-right: 20px;
+  color: #161616;
+  cursor: pointer;
+}
+
+.navbar-signup {
+  background-color: #4d90fe;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
+  transition: background-color 0.3s ease;
+}
+
+.navbar-signup:hover {
+  background-color: #357ae8;
+}
+
+/* 기존 코드 + 추가 사항 */
+
+.navbar-item {
+  margin-right: 20px;
+  font-size: 14px;
+  color: #161616;
+  text-transform: uppercase;
+  cursor: pointer; /* 포인터 커서 추가 */
+}
+
+.home-button {
+  background-color: #4d90fe;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
+  transition: background-color 0.3s ease;
+  margin-left: 20px; /* 버튼 간격 */
+}
+
+.home-button:hover {
+  background-color: #357ae8;
+}

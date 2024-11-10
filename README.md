@@ -35,61 +35,63 @@
 
 ## 프로젝트 구성
 
-# backinit<br>
-├── .venv  # Python 가상 환경 (Git 제외)<br>
-├── app  # 백엔드 코드 (FastAPI)<br>
-│     ├── __init__.py<br>
-│     ├── models<br>
-│     │     ├── __init__.py<br>
-│     │     └── hairAI.h5  # AI 모델 파일 (Git 제외)<br>
-│     ├── static<br>
-│     │     ├── fonts<br>
-│     │     │     ├── malgun.ttf<br>
-│     │     │     └── malgunbd.ttf<br>
-│     │     ├── images  # 이미지 파일 (Git 제외)<br>
-│     │     └── pdfs  # PDF 파일 (Git 제외)<br>
-│     ├── utils<br>
-│     │     ├── __init__.py<br>
-│     │     ├── ai_prediction.py<br>
-│     │     ├── pdf_generator.py<br>
-│     │     └── solution.py<br>
-│     ├── database.py<br>
-│     ├── db_models.py<br>
-│     ├── main.py<br>
-│     └── schemas.py<br>
-├── frontend   # 프론트엔드 코드 (React)<br>
-│     ├── node_modules  # Node.js 의존성 (Git 제외)<br>
-│     ├── public<br>
-│     └── src<br>
-│         ├── components<br>
-│         │   └── views<br>
-│         │         ├── AnalyzePage<br>
-│         │         │     └── AnalyzePage.js<br>
-│         │         ├── MainPage<br>
-│         │         │     ├── ChoosePage.css<br>
-│         │         │     ├── ChoosePage.js<br>
-│         │         │     ├── StartPage.css<br>
-│         │         │     └── StartPage.js<br>
-│         │         ├── NavBar<br>
-│         │         │     └── NavBar.js<br>
-│         │         ├── RecordsPage<br>
-│         │         │     ├── RecordsPage.css<br>
-│         │         │     └── RecordsPage.js<br>
-│         │         ├── ResultPage<br>
-│         │         │     └── ResultPage1.js<br>
-│         │         └── style<br>
-│         │             ├── resultStyle.css<br>
-│         │             └── style.css<br>
-│         ├── App.js<br>
-│         ├── index.css<br>
-│         ├── index.js<br>
-│         └── reportWebVitals.js<br>
-├── .env  # 환경 변수 파일 (Git 제외)<br>
-├── .gitignore   # Git 무시 파일 설정<br>
-├── app.db  # SQLite 데이터베이스 파일 (Git 제외)<br>
-├── package.json<br>
-├── package-lock.json<br>
-└── README.md<br>
+```bash
+backinit
+├── .venv  # Python 가상 환경 (Git 제외)
+├── app  # 백엔드 코드 (FastAPI)
+│     ├── __init__.py
+│     ├── models
+│     │     ├── __init__.py
+│     │     └── hairAI.h5  # AI 모델 파일 (Git 제외)
+│     ├── static
+│     │     ├── fonts
+│     │     │     ├── malgun.ttf
+│     │     │     └── malgunbd.ttf
+│     │     ├── images  # 이미지 파일 (Git 제외)
+│     │     └── pdfs  # PDF 파일 (Git 제외)
+│     ├── utils
+│     │     ├── __init__.py
+│     │     ├── ai_prediction.py
+│     │     ├── pdf_generator.py
+│     │     └── solution.py
+│     ├── database.py
+│     ├── db_models.py
+│     ├── main.py
+│     └── schemas.py
+├── frontend   # 프론트엔드 코드 (React)
+│     ├── node_modules  # Node.js 의존성 (Git 제외)
+│     ├── public
+│     └── src
+│         ├── components
+│         │   └── views
+│         │         ├── AnalyzePage
+│         │         │     └── AnalyzePage.js
+│         │         ├── MainPage
+│         │         │     ├── ChoosePage.css
+│         │         │     ├── ChoosePage.js
+│         │         │     ├── StartPage.css
+│         │         │     └── StartPage.js
+│         │         ├── NavBar
+│         │         │     └── NavBar.js
+│         │         ├── RecordsPage
+│         │         │     ├── RecordsPage.css
+│         │         │     └── RecordsPage.js
+│         │         ├── ResultPage
+│         │         │     └── ResultPage1.js
+│         │         └── style
+│         │             ├── resultStyle.css
+│         │             └── style.css
+│         ├── App.js
+│         ├── index.css
+│         ├── index.js
+│         └── reportWebVitals.js
+├── .env  # 환경 변수 파일 (Git 제외)
+├── .gitignore   # Git 무시 파일 설정
+├── app.db  # SQLite 데이터베이스 파일 (Git 제외)
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
 
 

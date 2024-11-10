@@ -35,7 +35,7 @@
 
 ## 프로젝트 구성
 
-backinit
+# backinit
 ├── .venv  # Python 가상 환경 (Git 제외)
 ├── app  # 백엔드 코드 (FastAPI)
 │   ├── __init__.py

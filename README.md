@@ -47,7 +47,9 @@ backinit
 │     │     │     ├── malgun.ttf
 │     │     │     └── malgunbd.ttf
 │     │     ├── images  # 이미지 파일 (하위 내용만 Git 제외)
+│     │     │     └── .gitkeep
 │     │     └── pdfs  # PDF 파일 (하위 내용만 Git 제외)
+│     │           └── .gitkeep
 │     ├── utils
 │     │     ├── __init__.py
 │     │     ├── ai_prediction.py
@@ -58,40 +60,40 @@ backinit
 │     ├── main.py
 │     └── schemas.py
 ├── frontend   # 프론트엔드 코드 (React)
-│     ├── package.json
+│     ├── package.json  #프론트엔드 React 의존성
 │     ├── package-lock.json
 │     ├── node_modules  # Node.js 의존성 (Git 제외)
 │     ├── public
 │     └── src
-│         ├── components
-│         │   └── views
-│         │         ├── AnalyzePage
-│         │         │     └── AnalyzePage.js
-│         │         ├── MainPage
-│         │         │     ├── ChoosePage.css
-│         │         │     ├── ChoosePage.js
-│         │         │     ├── StartPage.css
-│         │         │     └── StartPage.js
-│         │         ├── NavBar
-│         │         │     └── NavBar.js
-│         │         ├── RecordsPage
-│         │         │     ├── RecordsPage.css
-│         │         │     └── RecordsPage.js
-│         │         ├── ResultPage
-│         │         │     └── ResultPage1.js
-│         │         └── style
-│         │             ├── resultStyle.css
-│         │             └── style.css
-│         ├── App.js
-│         ├── index.css
-│         ├── index.js
-│         └── reportWebVitals.js
+│          ├── components
+│          │   └── views
+│          │         ├── AnalyzePage
+│          │         │     └── AnalyzePage.js
+│          │         ├── MainPage
+│          │         │     ├── ChoosePage.css
+│          │         │     ├── ChoosePage.js
+│          │         │     ├── StartPage.css
+│          │         │     └── StartPage.js
+│          │         ├── NavBar
+│          │         │     └── NavBar.js
+│          │         ├── RecordsPage
+│          │         │     ├── RecordsPage.css
+│          │         │     └── RecordsPage.js
+│          │         ├── ResultPage
+│          │         │     └── ResultPage1.js
+│          │         └── style
+│          │             ├── resultStyle.css
+│          │             └── style.css
+│          ├── App.js
+│          ├── index.css
+│          ├── index.js
+│          └── reportWebVitals.js
 ├── .env  # 환경 변수 파일 (Git 제외)
 ├── .gitignore   # Git 무시 파일 설정
 ├── .gitattributes  # Git 환경 파일 설정
 ├── app.db  # SQLite 데이터베이스 파일 (Git 제외)
-├── requirements.txt
-└── README.md
+├── requirements.txt # 백엔드 Python 의존성
+└── README.md  # 프로젝트 문서
 ```
 
 ## 프로젝트 상세 구조
@@ -125,14 +127,18 @@ backinit
 
       - **malgun.ttf:** 맑은 고딕 폰트 파일입니다.
       - **malgunbd.ttf:** 맑은 고딕 볼드 폰트 파일입니다.
+        
+- #### images
+  - **설명:** 이미지 파일들이 위치한 디렉토리입니다.
+  - **비고:** 하위 내용은 `.gitignore`에 포함되어 Git에 포함되지 않습니다.
+  - **파일:** `.gitkeep`  
+    빈 디렉토리를 Git에 유지하기 위한 파일입니다.
 
-    - #### images
-      - **설명:** 이미지 파일들이 위치한 디렉토리입니다.
-      - **비고:** 하위 내용은 .gitignore에 포함되어 Git에 포함되지 않습니다.
-
-    - #### pdfs
-      - **설명:** PDF 파일들이 위치한 디렉토리입니다.
-      - **비고:** 하위 내용은 .gitignore에 포함되어 Git에 포함되지 않습니다.
+- #### pdfs
+  - **설명:** PDF 파일들이 위치한 디렉토리입니다.
+  - **비고:** 하위 내용은 `.gitignore`에 포함되어 Git에 포함되지 않습니다.
+  - **파일:** `.gitkeep`  
+    빈 디렉토리를 Git에 유지하기 위한 파일입니다.
 
   - ### utils
     - **설명:** 유틸리티 스크립트들이 위치한 디렉토리입니다.

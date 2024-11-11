@@ -42,13 +42,13 @@ backinit
 │     ├── __init__.py
 │     ├── models
 │     │     ├── __init__.py
-│     │     └── hairAI.h5  # AI 모델 파일 (Git 제외)
+│     │     └── hairAI.h5  # AI 모델 파일
 │     ├── static
 │     │     ├── fonts
 │     │     │     ├── malgun.ttf
 │     │     │     └── malgunbd.ttf
-│     │     ├── images  # 이미지 파일 (Git 제외)
-│     │     └── pdfs  # PDF 파일 (Git 제외)
+│     │     ├── images  # 이미지 파일 (하위 내용만 Git 제외)
+│     │     └── pdfs  # PDF 파일 (하위 내용만 Git 제외)
 │     ├── utils
 │     │     ├── __init__.py
 │     │     ├── ai_prediction.py

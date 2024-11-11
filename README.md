@@ -87,6 +87,7 @@ backinit
 │         └── reportWebVitals.js
 ├── .env  # 환경 변수 파일 (Git 제외)
 ├── .gitignore   # Git 무시 파일 설정
+├── .gitattributes  #Git 환경 파일 설정
 ├── app.db  # SQLite 데이터베이스 파일 (Git 제외)
 ├── package.json
 ├── package-lock.json

@@ -4,8 +4,19 @@ venv/
 ENV/
 env/
 # 백엔드 관련
-app/static/fonts/
-app/models/hairAI.h5
+#app/models/hairAI.h5
+
+# images와 pdfs 디렉토리의 모든 내용 무시
+app/static/images/**
+app/static/pdfs/**
+
+# images와 pdfs 디렉토리 자체는 무시하지 않음
+!app/static/images/
+!app/static/pdfs/
+
+# 필요시, 디렉토리를 Git에서 추적하기 위해 빈 파일 추가 (선택 사항)
+# 예: app/static/images/.gitkeep, app/static/pdfs/.gitkeep
+
 
 # 프론트엔드 관련
 frontend/node_modules/

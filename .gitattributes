@@ -1,6 +1,5 @@
 # 모든 텍스트 파일은 LF로 처리
 * text=auto
-
 # 특정 파일 유형에 대해 LF 강제
 *.js text eol=lf
 *.jsx text eol=lf
@@ -9,10 +8,10 @@
 *.py text eol=lf
 *.json text eol=lf
 *.md text eol=lf
-
 # 바이너리 파일은 줄 바꿈 변환하지 않음
 *.png binary
 *.jpg binary
 *.jpeg binary
 *.gif binary
 *.h5 binary
+app/models/hairAI.h5 filter=lfs diff=lfs merge=lfs -text

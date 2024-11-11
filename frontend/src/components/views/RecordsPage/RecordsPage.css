@@ -3,6 +3,7 @@ body {
   background-color: #f5f5fa;
   margin: 0;
   min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .container {
@@ -12,105 +13,174 @@ body {
   position: relative;
 }
 
-.records-content {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 80px auto 0;
+.content {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 60px auto 0;
+}
+
+.header-text {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  background: linear-gradient(135deg, #4d90fe, #357ae8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .records-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  margin-top: 30px;
-  padding-bottom: 40px; /* 마지막 아이템 아래 여백 추가 */
+  padding: 20px 0;
 }
 
 .record-item {
-  border: 1px solid #cccccc;
+  background: white;
+  border-radius: 15px;
   padding: 20px;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .record-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .record-name {
-  font-size: 24px;
-  font-weight: bold;
-  color: #33333b;
-  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #4d90fe;
 }
 
 .record-info {
-  margin-bottom: 15px;
+  flex-grow: 1;
 }
 
 .record-info p {
-  font-size: 16px;
-  color: #47474f;
+  font-size: 14px;
+  color: #666;
   margin: 8px 0;
-}
-
-.record-image-container {
-  width: 100%;
   display: flex;
-  justify-content: center;
-  margin: 15px 0;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.record-image {
-  width: 300px;
-  height: 300px;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+.prediction-tag {
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-block;
 }
 
-.record-image:hover {
-  transform: scale(1.02);
+.prediction-양호 {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.prediction-경증 {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.prediction-중증 {
+  background-color: #ffebee;
+  color: #c62828;
 }
 
 .download-button {
-  display: inline-block;
-  background-color: #4d90fe;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 500;
+  margin-top: 15px;
+  padding: 10px;
+  background: linear-gradient(135deg, #4d90fe, #357ae8);
   color: white;
   border: none;
   border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
   cursor: pointer;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 4px rgba(77, 144, 254, 0.2);
   width: 100%;
-  max-width: 200px;
-  margin-top: 10px;
 }
 
 .download-button:hover {
-  background-color: #357ae8;
+  background: linear-gradient(135deg, #357ae8, #4d90fe);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(77, 144, 254, 0.3);
+}
+
+.download-button::before {
+  content: '📄';
+  font-size: 14px;
 }
 
 .error-message {
-  background-color: #ffebee;
-  border: 1px solid #ef5350;
-  color: #c62828;
+  margin: 20px auto;
   padding: 12px 20px;
+  background-color: #fff;
+  border-left: 4px solid #ef5350;
   border-radius: 8px;
-  margin: 20px 0;
-  text-align: center;
+  color: #d32f2f;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* 스크롤바 스타일링 */
+@media (max-width: 1400px) {
+  .records-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .records-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .records-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .content {
+    padding: 20px 15px;
+  }
+
+  .header-text {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .records-list {
+    grid-template-columns: 1fr;
+  }
+
+  .record-item {
+    padding: 15px;
+  }
+}
+
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -118,10 +188,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
+  background: #ccc;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #666;
+  background: #999;
 }

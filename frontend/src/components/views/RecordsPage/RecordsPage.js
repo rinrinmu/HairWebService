@@ -1,3 +1,4 @@
+// RecordsPage.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Navbar from '../NavBar/NavBar';
@@ -6,7 +7,7 @@ import './RecordsPage.css';
 const RecordsPage = () => {
   const [records, setRecords] = useState([]);
   const [error, setError] = useState('');
-  
+
   const BASE_URL = 'http://localhost:8000';
 
   useEffect(() => {
@@ -59,6 +60,7 @@ const RecordsPage = () => {
         <h2 className="header-text">분석 기록</h2>
         {error && (
           <div className="error-message">
+            <span className="error-icon">⚠️</span>
             {error}
           </div>
         )}
@@ -67,32 +69,28 @@ const RecordsPage = () => {
             <div className="record-item" key={record.id}>
               <h3 className="record-name">{record.name}</h3>
               <div className="record-info">
-                <p>예측: {record.prediction}</p>
-                <p>점수: {record.score}</p>
-                <p>날짜: {new Date(record.created_at).toLocaleDateString()}</p>
-              </div>
-              <div className="record-image-container">
-                {record.imageUrl && (
-                  <img 
-                    src={record.imageUrl}
-                    alt="분석 이미지" 
-                    className="record-image"
-                    onError={(e) => {
-                      console.error('Image load error:', e);
-                      e.target.style.display = 'none';
-                    }}
-                  />
-                )}
+                <p>
+                  <span>판정 결과:</span>
+                  <span className={`prediction-tag prediction-${record.prediction}`}>
+                    {record.prediction}
+                  </span>
+                </p>
+                <p>
+                  <span>점수:</span>
+                  <span>{record.score}점</span>
+                </p>
+                <p>
+                  <span>날짜:</span>
+                  <span>{new Date(record.created_at).toLocaleDateString()}</span>
+                </p>
               </div>
               {record.pdf_filename && (
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <button
-                    className="download-button"
-                    onClick={() => handleDownloadPDF(record.pdf_filename)}
-                  >
-                    PDF 다운로드
-                  </button>
-                </div>
+                <button
+                  className="download-button"
+                  onClick={() => handleDownloadPDF(record.pdf_filename)}
+                >
+                  PDF 다운로드
+                </button>
               )}
             </div>
           ))}

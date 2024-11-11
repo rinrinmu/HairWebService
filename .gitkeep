@@ -1,0 +1,7 @@
+# .gitkeep 파일 생성
+touch app/static/images/.gitkeep
+touch app/static/pdfs/.gitkeep
+
+# .gitkeep 파일 추가
+git add app/static/images/.gitkeep
+git add app/static/pdfs/.gitkeep

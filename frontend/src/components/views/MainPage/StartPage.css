@@ -1,58 +1,198 @@
+/* StartPage.css */
 .main-container {
   width: 100%;
-  height: 100vh;
-  background-color: #f5f5fa;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f5fa 0%, #e8eeff 100%);
   position: relative;
+  overflow: hidden;
+  padding-top: 70px; /* Navbar 높이만큼 패딩 */
+}
+
+/* 배경 장식 요소 */
+.main-container::before,
+.main-container::after {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(77, 144, 254, 0.1), rgba(53, 122, 232, 0.05));
+  z-index: 0;
+}
+
+.main-container::before {
+  top: -200px;
+  right: -200px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.main-container::after {
+  bottom: -200px;
+  left: -200px;
+  animation: float 8s ease-in-out infinite reverse;
 }
 
 .content {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  right: 0;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
   text-align: center;
+  z-index: 1;
+  animation: fadeIn 1s ease;
+}
+
+/* 타이틀 섹션 추가 */
+.title-section {
+  margin-bottom: 60px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.main-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #4d90fe, #357ae8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sub-title {
+  font-size: 20px;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .start-button {
   display: inline-block;
-  background-color: #4d90fe;
-  padding: 30px 60px; /* 버튼 크기 증가 */
-  font-size: 28px; /* 폰트 크기 증가 */
-  font-weight: medium;
-  color: white;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #4d90fe, #357ae8);
+  padding: 25px 50px;
+  border-radius: 16px;
   cursor: pointer;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
   position: relative;
-  margin-top: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.3s forwards;
+  box-shadow: 0 10px 20px rgba(77, 144, 254, 0.2);
+}
+
+.start-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.start-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(77, 144, 254, 0.3);
+}
+
+.start-button:hover::before {
+  transform: translateX(100%);
 }
 
 .start-button-text {
-  font-size: 32px; /* 버튼 텍스트 크기 증가 */
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 600;
   color: white;
-  text-align: center;
+  margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
-/* 반응형 스타일 */
+/* 애니메이션 키프레임 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* 반응형 디자인 */
 @media (max-width: 768px) {
+  .main-title {
+    font-size: 36px;
+  }
+
+  .sub-title {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
   .start-button {
-    padding: 20px 40px; /* 작은 화면에서의 버튼 크기 */
-    font-size: 24px;
+    padding: 20px 40px;
   }
 
   .start-button-text {
-    font-size: 28px; /* 작은 화면에서의 텍스트 크기 */
+    font-size: 20px;
   }
 }
 
 @media (max-width: 480px) {
+  .main-title {
+    font-size: 28px;
+  }
+
+  .sub-title {
+    font-size: 16px;
+  }
+
   .start-button {
-    padding: 15px 30px; /* 더 작은 화면에서의 버튼 크기 */
-    font-size: 20px;
+    padding: 15px 30px;
+    width: 80%;
+    max-width: 280px;
   }
 
   .start-button-text {
-    font-size: 24px; /* 더 작은 화면에서의 텍스트 크기 */
+    font-size: 18px;
+  }
+}
+
+/* 다크모드 대응 */
+@media (prefers-color-scheme: dark) {
+  .main-container {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  }
+
+  .main-title {
+    color: #fff;
+  }
+
+  .sub-title {
+    color: #bbb;
   }
 }

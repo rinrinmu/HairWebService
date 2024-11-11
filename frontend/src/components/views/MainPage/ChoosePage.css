@@ -1,106 +1,177 @@
+/* ChoosePage.css */
 .main-container {
-  width: 100vw; /* 화면 너비에 맞춤 */
-  height: 100vh; /* 화면 높이에 맞춤 */
-  position: relative;
+  width: 100%;
+  min-height: 100vh;
   background-color: #f5f5fa;
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 70px; /* Navbar 높이만큼 패딩 추가 */
 }
 
 .welcome-message {
-  width: 40%; /* 화면 너비에 비례한 크기 */
-  position: absolute;
-  left: 50%;
-  top: 25%;
-  transform: translateX(-50%); /* 가운데 정렬 */
-  font-size: 3vw; /* 화면 너비에 비례한 폰트 크기 */
-  font-weight: bold;
+  width: 100%;
+  max-width: 800px;
+  margin: 60px auto 0;
   text-align: center;
-  color: #33333b;
+  opacity: 0;
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.welcome-message p {
+  font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #4d90fe, #357ae8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  padding: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .buttons-container {
-  position: absolute;
-  top: 50%; /* 화면 중간에 위치 */
   display: flex;
-  justify-content: space-around;
-  width: 70%;
-  left: 15%;
   flex-direction: column;
-  align-items: center; /* 버튼과 텍스트를 가운데 정렬 */
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.3s forwards;
 }
 
 .button {
-  width: 25%; /* 버튼 너비 줄임 */
-  padding: 15px 0; /* 상하 패딩 줄임 */
-  border-radius: 10px;
-  background-color: #4d90fe;
-  color: white;
-  font-size: 1.5vw; /* 폰트 크기 줄임 */
-  font-weight: 500;
-  margin-bottom: 8px; /* 버튼 아래 여백 */
+  width: 300px;
+  padding: 20px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 600;
   text-align: center;
   cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.button:hover::before {
+  transform: translateX(100%);
+}
+
+.analyze-button {
+  background: linear-gradient(135deg, #4d90fe, #357ae8);
+  color: white;
+  box-shadow: 0 10px 20px rgba(77, 144, 254, 0.2);
+}
+
+.record-button {
+  background: white;
+  color: #4d90fe;
+  border: 2px solid #4d90fe;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(77, 144, 254, 0.3);
+}
+
+.button p {
+  margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-text {
-  color: #47474f;
-  font-size: 1.2vw; /* 텍스트 크기 줄임 */
-  margin-top: -5px; /* 버튼과 텍스트 사이 간격 조정 */
-  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin-top: -25px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
-.navbar {
-  width: 100vw; /* 화면 너비에 맞춤 */
-  height: 60px;
-  background-color: white;
-  box-shadow: 0px 3px 6px rgba(50, 50, 50, 0.3);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
+.analyze-button:hover + .footer-text,
+.record-button:hover + .footer-text {
+  color: #4d90fe;
+  opacity: 1;
+  transform: translateY(2px);
 }
 
-.navbar-menu {
-  display: flex;
-  gap: 20px;
+/* 애니메이션 정의 */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.navbar-auth {
-  display: flex;
-  align-items: center;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.signup-button {
-  background-color: #4d90fe;
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.navbar-tools {
-  cursor: pointer;
-}
-
-/* 반응형 스타일 */
+/* 반응형 디자인 */
 @media (max-width: 768px) {
-  .welcome-message {
-    font-size: 5vw; /* 작은 화면에서 폰트 크기 조정 */
+  .welcome-message p {
+    font-size: 36px;
   }
   
   .button {
-    width: 40%; /* 버튼의 너비 조정 */
-    font-size: 3vw;
+    width: 260px;
+    font-size: 18px;
+  }
+  
+  .footer-text {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
-  .welcome-message {
-    font-size: 6vw; /* 더 작은 화면에서 폰트 크기 조정 */
+  .welcome-message p {
+    font-size: 30px;
   }
   
   .button {
-    width: 50%; /* 더 작은 화면에서 버튼 크기 조정 */
-    font-size: 4vw;
+    width: 220px;
+    font-size: 16px;
+    padding: 15px;
+  }
+  
+  .buttons-container {
+    gap: 30px;
+    margin-top: 40px;
+  }
+}
+
+/* 다크모드 대응 */
+@media (prefers-color-scheme: dark) {
+  .main-container {
+    background-color: #1a1a1a;
+  }
+  
+  .record-button {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .footer-text {
+    color: #999;
   }
 }

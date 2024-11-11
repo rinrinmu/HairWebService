@@ -43,13 +43,11 @@ const AnalyzePage = () => {
 
       if (response.ok) {
         const result = await response.json();
-        alert('파일 업로드 성공!');
         console.log('서버 응답:', result);
-
         navigate('/ResultPage1', { state: result });
       } else {
         const error = await response.json();
-        alert(`파일 업로드 실패! 상태 코드: ${response.status}, 에러 메시지: ${error.detail}`);
+        alert(`업로드 실패: ${error.detail}`);
       }
     } catch (error) {
       console.error('파일 업로드 중 에러:', error);
@@ -72,7 +70,6 @@ const AnalyzePage = () => {
           두피 사진을 사용하여 현재 나의 두피 상태를 확인 할 수 있습니다.
         </p>
 
-        {/* 사용자 이름 입력 필드 */}
         <div className="form-section">
           <div className="name-input-section">
             <label className="form-label">
@@ -87,7 +84,6 @@ const AnalyzePage = () => {
             </label>
           </div>
 
-          {/* 드롭존 섹션 */}
           <div {...getRootProps()} className={`dropzone ${isDragActive ? 'active' : ''}`}>
             <input {...getInputProps()} />
             {isDragActive ? (
@@ -97,23 +93,28 @@ const AnalyzePage = () => {
             )}
           </div>
 
-          {/* 이미지 선택 버튼 */}
           <div className="upload-section">
-            <label className="upload-button">
+            <label className="upload-button file-select">
               이미지 선택
-              <input type="file" onChange={handleFileChange} />
+              <input 
+                type="file"
+                onChange={handleFileChange}
+                accept="image/jpeg, image/png"
+              />
             </label>
           </div>
 
-          {/* 파일 업로드 버튼 */}
           <div className="upload-button-container">
-            <button className="upload-button" onClick={handleFileUpload}>
-              파일 업로드
+            <button 
+              className="upload-button"
+              onClick={handleFileUpload}
+              disabled={selectedFiles.length === 0 || !userName}
+            >
+              분석하기
             </button>
           </div>
         </div>
 
-        {/* 선택된 파일 리스트 */}
         {selectedFiles.length > 0 && (
           <div className="file-list">
             <h4>선택한 파일:</h4>

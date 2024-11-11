@@ -1,71 +1,127 @@
-.records-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* RecordsPage.css */
+body {
   background-color: #f5f5fa;
+  margin: 0;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5fa;
+  position: relative;
 }
 
 .records-content {
-  width: 80%;
-  max-width: 1200px;
-  margin-top: 80px;
-  background-color: #ffffff;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #33333b;
-}
-
-.no-records {
-  text-align: center;
-  font-size: 18px;
-  color: #888888;
+  max-width: 1200px;
+  margin: 80px auto 0;
 }
 
 .records-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
+  margin-top: 30px;
+  padding-bottom: 40px; /* 마지막 아이템 아래 여백 추가 */
 }
 
 .record-item {
-  background-color: #f9f9ff;
+  border: 1px solid #cccccc;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
+  background-color: #ffffff;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
-.record-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+.record-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.record-name, .record-date, .record-prediction, .record-score {
-  font-size: 16px;
-  color: #33333b;
-}
-
-.pdf-link {
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #4d90fe;
-  text-decoration: none;
+.record-name {
+  font-size: 24px;
   font-weight: bold;
-  transition: color 0.3s;
+  color: #33333b;
+  margin-bottom: 15px;
 }
 
-.pdf-link:hover {
-  color: #0033cc;
+.record-info {
+  margin-bottom: 15px;
+}
+
+.record-info p {
+  font-size: 16px;
+  color: #47474f;
+  margin: 8px 0;
+}
+
+.record-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.record-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.record-image:hover {
+  transform: scale(1.02);
+}
+
+.download-button {
+  display: inline-block;
+  background-color: #4d90fe;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+.download-button:hover {
+  background-color: #357ae8;
+}
+
+.error-message {
+  background-color: #ffebee;
+  border: 1px solid #ef5350;
+  color: #c62828;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
 }

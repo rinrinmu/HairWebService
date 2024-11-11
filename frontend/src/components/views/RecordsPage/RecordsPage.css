@@ -88,7 +88,17 @@ body {
   color: #2e7d32;
 }
 
-.prediction-경증 {
+.prediction-경증1단계 {
+  background-color: #fff3e0;
+  color: #f5e100;
+}
+
+.prediction-경증2단계 {
+  background-color: #fff3e0;
+  color: #f5b000;
+}
+
+.prediction-경증3단계 {
   background-color: #fff3e0;
   color: #f57c00;
 }

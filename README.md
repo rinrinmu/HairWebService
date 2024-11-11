@@ -57,6 +57,8 @@ backinit
 │     ├── main.py
 │     └── schemas.py
 ├── frontend   # 프론트엔드 코드 (React)
+│     ├── package.json
+│     ├── package-lock.json
 │     ├── node_modules  # Node.js 의존성 (Git 제외)
 │     ├── public
 │     └── src
@@ -85,10 +87,9 @@ backinit
 │         └── reportWebVitals.js
 ├── .env  # 환경 변수 파일 (Git 제외)
 ├── .gitignore   # Git 무시 파일 설정
-├── .gitattributes  #Git 환경 파일 설정
+├── .gitattributes  # Git 환경 파일 설정
 ├── app.db  # SQLite 데이터베이스 파일 (Git 제외)
-├── package.json
-├── package-lock.json
+├── requirements.txt
 └── README.md
 ```
 
@@ -160,7 +161,7 @@ backinit
     pip install -r requirements.txt
     ```
 
-#### 백엔드 환경 변수 설정
+  #### 백엔드 환경 변수 설정
 
 1. **`.env` 파일 생성**:
 

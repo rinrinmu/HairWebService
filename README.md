@@ -174,7 +174,7 @@ backinit
 2. **환경 변수 추가**:
 
     ```env
-    OPENAI_API_KEY=your_openai_api_key_here
+    OPENAI_API_KEY="openAI API 키를 여기에 삽입하십시오."
     ```
 
     > **주의:** `.env` 파일은 민감한 정보를 포함하고 있으므로, 반드시 `.gitignore`에 추가되어 있어야 합니다.
@@ -309,7 +309,7 @@ backinit
     ## 보안 고지
     
     - **민감한 파일 제외**:
-      - `.env` 파일과 `hairAI.h5` 모델 파일은 GitHub에 포함되지 않습니다.
+      - `.env`는 GitHub에 포함되지 않습니다.
       - `.gitignore`에 이미 추가되어 있으므로, 실수로 커밋되지 않도록 주의하세요.
     
     - **API 키 관리**:

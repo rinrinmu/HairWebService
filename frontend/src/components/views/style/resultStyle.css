@@ -171,15 +171,26 @@ canvas {
   color: #2e7d32;
 }
 
-.prediction-result.경증 {
-  background-color: rgba(255, 193, 7, 0.1);
-  color: #f57f17;
+.prediction-result.경증1단계 {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #f5e100;
+}
+
+.prediction-result.경증2단계 {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #f5b000;
+}
+
+.prediction-result.경증3단계 {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #f57c00;
 }
 
 .prediction-result.중증 {
   background-color: rgba(244, 67, 54, 0.1);
   color: #d32f2f;
 }
+
 
 .solution {
   background-color: rgba(77, 144, 254, 0.1);
@@ -188,6 +199,7 @@ canvas {
   border-radius: 8px;
   margin: 15px 0;
   line-height: 1.5;
+  white-space: pre-line; /* 줄바꿈 속성 추가 */
 }
 
 .result-box {

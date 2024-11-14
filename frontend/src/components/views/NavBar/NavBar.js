@@ -19,10 +19,6 @@ const Navbar = () => {
         <div className="navbar-item" onClick={handleHomeClick}>머리카락 보일라</div>
         <div className="navbar-item" onClick={handleRecordsClick}>기록 보기</div> 
       </div>
-      <div className="navbar-right">
-        <p className="navbar-login">로그인</p>
-        <div className="navbar-signup">가입하기</div>
-      </div>
     </div>
   );
 };

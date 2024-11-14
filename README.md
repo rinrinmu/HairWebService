@@ -247,7 +247,7 @@ backinit
 
 ## .gitignore
 - **설명:** Git에서 무시할 파일 및 디렉토리를 지정하는 파일입니다.
-- **내용:** .venv/, hairAI.h5, node_modules/, .env, app.db 등 민감하거나 불필요한 파일들이 포함됩니다.
+- **내용:** .venv/, node_modules/, .env, app.db 등 민감하거나 불필요한 파일들이 포함됩니다.
 
 ---
 

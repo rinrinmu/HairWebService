@@ -3,9 +3,8 @@
 venv/
 ENV/
 env/
-# 백엔드 관련
-#app/models/hairAI.h5
 
+# 백엔드 관련
 # app/static/images와 app/static/pdfs 디렉토리 내 모든 파일과 폴더 무시
 app/static/images/**
 app/static/pdfs/**
